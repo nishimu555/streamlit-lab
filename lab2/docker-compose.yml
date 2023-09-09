@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: streamlit-lab2
+    container_name: streamlit-lab2
+    ports:
+    - "8501:8501"
+    volumes:
+    - ./app:/streamlit/app/

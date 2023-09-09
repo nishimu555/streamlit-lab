@@ -3,8 +3,11 @@ import streamlit as st
 class st_session:
     # ページ間でセッション情報を引き継ぐために、対象のキーと初期値を二重配列定義する。
     session_list=\
-        [["name",""],\
-        ["age",25]]
+        [\
+            ["name",""],\
+            ["age",25],\
+            ["chk1",False]\
+        ]
     
     def __init__(self):
         for item in self.session_list:

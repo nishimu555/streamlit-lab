@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./config/ ./streamlit/config/
-# COPY ./app/ ./streamlit/app/
 
 RUN pip3 install -r ./streamlit/config/requirements.txt
 
