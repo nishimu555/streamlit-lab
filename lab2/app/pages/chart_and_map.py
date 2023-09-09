@@ -3,7 +3,9 @@ import streamlit as st
 import numpy as np
 
 from common import session_manager
-ss=session_manager.st_session()
+ssm = session_manager.st_session()
+# ssm.write_session_info()
+
 
 st.title("チャート、マップを描画する")
 
