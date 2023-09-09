@@ -22,17 +22,18 @@ docker run -p 8501:8501 --name streamlit1 streamlit-lab1
 そのため以下のようなクラスを作成して、各ページの先頭でクリエイトすると引き継ぎされるようになる。
 
 ```python
-import streamlit as st
-
 class st_session:
-    session_list=["name","age"]
+    # ページ間でセッション情報を引き継ぐために、対象のキーと初期値を二重配列定義する。
+    session_list=\
+        [["name",""],\
+        ["age",25]]
     
     def __init__(self):
         for item in self.session_list:
-            if item not in st.session_state:
-                st.session_state[item] = ""
+            if item[0] not in st.session_state:
+                st.session_state[item[0]] = item[1]
             else:
-                st.session_state[item] = st.session_state[item]
+                st.session_state[item[0]] = st.session_state[item[0]]
 ```
 
 以下のような情報もあるが、内容がよく分からず。
